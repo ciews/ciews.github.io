@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default_dev.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script> 
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<!--<span class="comments">/**</span><br />-->
+				<span style="font-size:20px">当你老了，头发花白，睡意沉沉</span><br />
+				<span style="font-size:20px">炉火旁打盹，请取下这部诗歌</span><br />
+				<span style="font-size:20px">慢慢读，回想你过去眼神的柔和 </span><br />
+				<span style="font-size:20px">回想它们昔日浓重的阴影</span><br /><br />
+				
+				<span style="font-size:20px">多少人爱你青春欢畅的时辰</span><br />
+				<span style="font-size:20px">爱慕你的美丽，假意或真心</span><br />
+				<span style="font-size:20px">只有一个人爱你那朝圣者的灵魂</span><br />
+				<span style="font-size:20px">爱你衰老了的脸上痛苦的皱纹</span><br /><br />
+				
+				<span style="font-size:20px">垂下头来，在红光闪耀的炉子旁</span><br />
+				<span style="font-size:20px">凄然地轻轻诉说那爱情的消逝</span><br />
+				<span style="font-size:20px">在头顶的山上它缓缓踱着步子</span><br />
+				<span style="font-size:20px">在一群星星中间隐藏着脸庞</span><br /><br />
+				<span style="font-size:20px;margin-left:100px;">——威廉·巴特勒·叶芝</span><br />
+				<!--<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (isHesitate) {<br />
+				<span class="placeholder"/>i.waitFor(u);<br />
+				<span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
+				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
+				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
+				}<br />
+				<span class="comments">// After a romantic wedding, we will live happily ever after.</span><br />
+				i.marry(u);<br />
+				i.liveHappilyWith(u);<br />-->
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas> 
+				<div id="words">
+					<div id="messages">
+						何晓杏, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u forever and ever.<br/>
+						<div class="signature">-- 吴光华</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018,01,25);  
+		together.setHours(17);
+		together.setMinutes(30);
+		together.setSeconds(0);
+		together.setMilliseconds(0); 
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
